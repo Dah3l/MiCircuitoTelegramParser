@@ -1,0 +1,23 @@
+# ============================================================
+# Configuración del Worker: SENsato Telegram Scraper
+# Canal: EmpresaElectricaDeLaHabana
+# ============================================================
+
+name = "sensato-eeh-scraper"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Cron Trigger: cada 2 minutos
+[triggers]
+crons = ["*/2 * * * *"]
+
+# Binding a base de datos D1
+[[d1_databases]]
+binding = "DB"
+database_name = "sensato-eeh-posts"
+database_id = "TU_DATABASE_ID_AQUI"
+
+# Binding a KV para watermark
+[[kv_namespaces]]
+binding = "KV"
+namespace_id = "TU_KV_NAMESPACE_ID_AQUI"
